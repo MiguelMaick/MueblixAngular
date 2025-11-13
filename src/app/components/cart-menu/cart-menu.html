@@ -1,0 +1,111 @@
+<!-- 1. CONTENEDOR PRINCIPAL (Overlay) -->
+<div 
+  *ngIf="isOpen" 
+  class="fixed inset-0 z-50 overflow-y-auto backdrop-blur-sm  transition-opacity duration-300"
+>
+  
+  <!-- 2. ÁREA DE CIERRE (El fondo) -->
+  <div class="flex min-h-full items-start justify-end p-0">
+    
+    <!-- Este div maneja el click fuera del menú principal (el "fondo oscuro") -->
+    <!-- Este es el que queremos que cierre el menú al hacer clic -->
+    <div (click)="onClose()" class="absolute inset-0"></div>
+
+    <!-- 3. CONTENIDO DEL CARRITO: Sidebar. Aquí AGREGAMOS (click) y $event.stopPropagation() -->
+    <div 
+      (click)="$event.stopPropagation()"
+      class="relative w-full max-w-md h-screen transform transition-all duration-300 ease-in-out
+             bg-gray-900 text-white shadow-2xl overflow-y-auto"
+      >
+      
+      <!-- HEADER DEL CARRITO (Botón de Cerrar y Título) -->
+      <header class="sticky top-0 bg-gray-900 border-b border-gray-700/50 p-6 flex items-center justify-between">
+          <h1 class="text-3xl font-extrabold text-green-400">
+              Carrito
+          </h1>
+          
+          <!-- Botón de Cerrar (sigue funcionando normalmente) -->
+          <button 
+              (click)="onClose()" 
+              class="text-gray-300 hover:text-green-500 transition p-2 rounded-full border border-gray-600/50 hover:border-green-500"
+              title="Cerrar Carrito"
+          >
+              <!-- Icono X -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+          </button>
+      </header>
+
+      <!-- CONTENIDO DEL CARRITO (Lista y Resumen) -->
+      <div class="px-6 space-y-8 pb-10">
+
+        <!-- LISTA DE PRODUCTOS -->
+        <div class="space-y-4 pt-4">
+          <!-- PRODUCTO 1 -->
+          <div class="flex items-start bg-gray-800 p-4 rounded-xl shadow-lg">
+            <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-20 h-20 object-cover rounded-lg" alt="Sofá Moderno"/>
+            <div class="ml-4 flex-1">
+              <h2 class="text-lg font-semibold">Sofá Moderno</h2>
+              <p class="text-green-400 font-bold">$5,499 MXN</p>
+              <div class="flex items-center gap-3 mt-2">
+                <button class="w-6 h-6 bg-gray-700 rounded-full font-bold text-sm hover:bg-gray-600 transition">-</button>
+                <span class="text-base font-semibold">1</span>
+                <button class="w-6 h-6 bg-gray-700 rounded-full font-bold text-sm hover:bg-gray-600 transition">+</button>
+              </div>
+            </div>
+            <!-- Botón Eliminar -->
+            <button class="text-red-400 hover:text-red-500 text-lg font-bold ml-4 p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.528 0v.51m0 0a48.109 48.109 0 00-3.513-.397m-7.53-.51h2.25m-2.25 0h2.25" />
+              </svg>
+            </button>
+          </div>
+          
+          <!-- PRODUCTO 2 -->
+          <div class="flex items-start bg-gray-800 p-4 rounded-xl shadow-lg">
+            <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-20 h-20 object-cover rounded-lg" alt="Silla de Madera"/>
+            <div class="ml-4 flex-1">
+              <h2 class="text-lg font-semibold">Silla de Madera</h2>
+              <p class="text-green-400 font-bold">$1,299 MXN</p>
+              <div class="flex items-center gap-3 mt-2">
+                <button class="w-6 h-6 bg-gray-700 rounded-full font-bold text-sm hover:bg-gray-600 transition">-</button>
+                <span class="text-base font-semibold">2</span>
+                <button class="w-6 h-6 bg-gray-700 rounded-full font-bold text-sm hover:bg-gray-600 transition">+</button>
+              </div>
+            </div>
+            <!-- Botón Eliminar -->
+            <button class="text-red-400 hover:text-red-500 text-lg font-bold ml-4 p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.528 0v.51m0 0a48.109 48.109 0 00-3.513-.397m-7.53-.51h2.25m-2.25 0h2.25" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+        <!-- RESUMEN DEL PEDIDO -->
+        <div class="bg-gray-800 p-5 rounded-2xl shadow-lg border border-gray-700/50">
+          <h2 class="text-xl font-bold mb-4 text-green-500">Resumen del pedido</h2>
+
+          <div class="space-y-2 text-md">
+            <div class="flex justify-between text-gray-300"><span>Subtotal:</span><span>$8,097 MXN</span></div>
+            <div class="flex justify-between text-gray-300"><span>Envío:</span><span>$199 MXN</span></div>
+            <div class="flex justify-between font-bold text-green-400 border-t border-gray-700/50 pt-2 mt-2">
+              <span>Total:</span>
+              <span>$8,296 MXN</span>
+            </div>
+          </div>
+
+          <!-- BOTÓN PAGAR -->
+          <button
+            class="w-full mt-6 bg-green-500 text-black font-extrabold py-3 rounded-xl hover:bg-green-600 transition shadow-green-500/50 shadow-md">
+            Proceder al pago
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

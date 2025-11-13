@@ -1,0 +1,142 @@
+
+<main class="flex flex-col items-center justify-center w-full min-h-screen bg-black/90 relative z-10 p-6">
+
+<!-- que es Mueblix -->
+<section class="max-w-6xl">
+    <div class="mt-10 w-full max-w-6xl">
+        <div class="bg-white/5 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start gap-6">
+            <!-- imágenes -->
+            <div class="w-full md:w-1/2 grid grid-cols-1 gap-4">
+                <img src="https://images.unsplash.com/photo-1641849460110-a2c3caa0c69b?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Familia Mueblix" class="w-full h-64 md:h-72 object-cover rounded-lg shadow-lg" />
+                <img src="https://plus.unsplash.com/premium_photo-1739350938190-cc3053fb0ffb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Detalle mueble Mueblix" class="w-full h-36 object-cover rounded-lg shadow" />
+            </div>
+
+            <!-- historia -->
+            <div class="w-full md:w-1/2 text-white text-justify">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4 flex items-center">
+                    <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
+                    Nuestra historia
+                </h3>
+
+                <p class="mb-3 text-lg leading-relaxed">
+                    Mueblix nació como la idea sencilla de ofrecer
+                    <span class="text-green-400 font-semibold">muebles de calidad</span> a
+                    <span class="text-green-400 font-semibold">precios accesibles</span>. La meta fue desde el inicio que más hogares
+                    pudieran disfrutar de diseño y durabilidad sin pagar de más.
+                </p>
+
+                <p class="mb-3 text-lg leading-relaxed">
+                    Con el tiempo, lo que empezó como un proyecto local se convirtió en un
+                    <span class="text-green-400 font-semibold">negocio familiar</span>. Generaciones trabajaron juntas para mejorar procesos,
+                    seleccionar mejores materiales y mantener precios justos formando un espíritu familiar que aún guía cada decisión.
+                </p>
+
+                <p class="text-lg leading-relaxed">
+                    Hoy Mueblix combina tradición y modernidad: productos pensados para durar,
+                    atención cercana y compromiso con la <span class="text-green-400 font-semibold">sostenibilidad</span> y el servicio al cliente.
+                </p>
+
+                <div class="mt-6 flex gap-3">
+                    <a [routerLink]="['/products']" (click)="scrollToTop()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-md shadow transition">
+                        Explorar colección
+                    </a>
+                    <a [routerLink]="['/contact']" (click)="scrollToTop()" class="border border-green-600 text-green-400 px-5 py-2 rounded-md hover:bg-green-900/20 transition">
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Misión, visión y valores-->
+    <div class="mt-10 w-full max-w-6xl">
+        <div class="bg-white/5 rounded-xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            <!-- Misión -->
+            <div class="flex flex-col items-start">
+                <h4 class="text-2xl font-bold mb-3 flex items-center">
+                    <span class="inline-block w-2 h-6 bg-green-500 rounded mr-3"></span>
+                    Misión
+                </h4>
+                <p class="text-lg leading-relaxed">
+                    Proveer muebles de alta calidad que combinen diseño, funcionalidad y sostenibilidad, mejorando la vida diaria de nuestros clientes.
+                </p>
+            </div>
+
+            <!-- Visión -->
+            <div class="flex flex-col items-start">
+                <h4 class="text-2xl font-bold mb-3 flex items-center">
+                    <span class="inline-block w-2 h-6 bg-green-500 rounded mr-3"></span>
+                    Visión
+                </h4>
+                <p class="text-lg leading-relaxed">
+                    Ser reconocidos como líderes en la industria del mueble por nuestra innovación, compromiso con la sostenibilidad y excelencia en el servicio al cliente.
+                </p>
+            </div>
+
+            <!-- Valores -->
+            <div class="flex flex-col items-start">
+                <h4 class="text-2xl font-bold mb-3 flex items-center">
+                    <span class="inline-block w-2 h-6 bg-green-500 rounded mr-3"></span>
+                    Valores
+                </h4>
+                <ul class="list-disc list-inside text-lg leading-relaxed">
+                    <li>Calidad</li>
+                    <li>Sostenibilidad</li>
+                    <li>Innovación</li>
+                    <li>Compromiso con el cliente</li>
+                    <li>Trabajo en equipo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- Redes sociales-->
+<div class="bg-white/5 rounded-xl p-6 mt-10 w-full max-w-6xl flex flex-col items-center">
+  <h3 class="text-3xl md:text-4xl font-bold mb-4 flex items-center text-white">
+    <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
+    Síguenos en redes sociales
+  </h3>
+
+  <p class="mb-6 text-lg text-white text-center">
+    Mantente al día con nuestras últimas colecciones, ofertas exclusivas y consejos de decoración.
+  </p>
+
+  <!-- Íconos alineados horizontalmente -->
+  <div class="flex gap-6 justify-center">
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"  class="text-white hover:text-green-400 transition">
+      <i class="fa-brands fa-facebook fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"  class="text-white hover:text-green-400 transition">
+      <i class="fa-brands fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+      <i class="fa-brands fa-twitter fa-2x"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Mapa-->
+    <div class="mt-10 w-full max-w-6xl">
+        <div class="bg-white/5 rounded-xl p-6 md:p-8 text-white">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4 flex items-center">
+                <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
+                Nuestra ubicación
+            </h3>
+            <div class="w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14936.406271566417!2d-103.2557854304856!3d20.62471644926791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b5c7ae3a172f%3A0xfbb3b15de8972a95!2sCreaciones%20Marlet!5e0!3m2!1ses-419!2smx!4v1763055348715!5m2!1ses-419!2smx"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+</main>
+

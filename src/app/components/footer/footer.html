@@ -1,0 +1,53 @@
+<footer class="bg-black/90 text-white py-10 px-6 shadow-lg" style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+  <div class="border-t border-gray-700 max-w-6xl mx-auto flex flex-col items-center space-y-6">
+    
+    <!-- Derechos reservados -->
+    <div class="text-center">
+      <br>
+      <p>&copy; 2025 Mueblix - Todos los derechos reservados.</p>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="flex gap-6 justify-center">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+        <i class="fa-brands fa-facebook fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+        <i class="fa-brands fa-twitter fa-2x"></i>
+      </a>
+    </div>
+
+    <!-- Secciones principales -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl text-center md:text-left mt-6">
+      
+      <!-- Enlaces del sitio -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-green-400">Enlaces útiles</h3>
+        <ul class="space-y-2">
+          <li><a [routerLink]="['/contact']" (click)="scrollToTop()" class="hover:text-green-400 transition">Contáctanos</a></li>
+          <li><a [routerLink]="['/privacy']" (click)="scrollToTop()" class="hover:text-green-400 transition">Política de Privacidad</a></li>
+          <li><a [routerLink]="['/questions']" (click)="scrollToTop()" class="hover:text-green-400 transition">Preguntas Frecuentes</a></li>
+          <li><a [routerLink]="['/terms']" (click)="scrollToTop()" class="hover:text-green-400 transition">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Información de contacto -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-green-400">Contáctanos</h3>
+        <p class="mb-2"><span class="font-bold">Teléfono:</span> (123) 456-7890</p>
+        <p class="mb-2"><span class="font-bold">Correo:</span> contacto@mueblix.mx</p>
+        <p><span class="font-bold">Dirección:</span> Loma, Tangancícuaro Ote. 172, Loma Dorada Delegación D, 45402 Guadalajara, Jal.</p>
+      </div>
+
+    </div>
+
+    <!-- Firma final -->
+    <div class="border-t border-gray-700 w-full text-center pt-4 mt-6">
+      <p class="text-sm text-gray-400">Página hecha por <span class="font-bold text-yellow-500">Sasaki Gang Technologies</span></p>
+    </div>
+
+  </div>
+</footer>

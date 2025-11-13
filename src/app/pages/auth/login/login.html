@@ -1,0 +1,88 @@
+<main class="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 bg-[#000000E6]">
+
+  <!-- IZQUIERDA — FORMULARIO -->
+  <div class="flex flex-col justify-center items-center px-6 py-5 md:px-16 w-full">
+
+    <!-- LOGO -->
+    <img src="MueblixB.png" alt="Logo Mueblix" class="w-60 mb-3">
+
+    <!-- TÍTULO -->
+    <h1 class="text-3xl font-bold text-white mb-8">Iniciar sesión</h1>
+
+    <!-- FORMULARIO -->
+    <form class="w-full max-w-md space-y-6">
+
+      <!-- Correo -->
+      <div>
+        <label class="font-bold text-green-500 text-lg">Correo:</label>
+        <input
+          type="email"
+          class="text-white w-full bg-transparent border-b border-white py-2 focus:outline-none"
+          placeholder="ejemplo@gmail.com" />
+      </div>
+
+      <!-- Contraseña -->
+      <div>
+        <label class="font-bold text-green-500 text-lg">Contraseña:</label>
+        <input
+          type="password"
+          class="text-white w-full bg-transparent border-b border-white py-2 focus:outline-none"
+          placeholder="••••••••" />
+
+        <!-- Olvidé contraseña -->
+        <a
+          [routerLink]="['/auth/forgot-password']"
+          (click)="scrollToTop()"
+          class="text-sm text-green-400 hover:underline mt-1 inline-block cursor-pointer">
+          Olvidé contraseña
+        </a>
+      </div>
+
+      <!-- BOTONES -->
+      <div class="flex flex-col gap-4 pt-4 items-center">
+
+        <button
+          type="button"
+          class="bg-green-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition w-full">
+          Iniciar sesión
+        </button>
+      <!-- CREAR CUENTA -->
+        <a
+          [routerLink]="['/auth/register']"
+          (click)="scrollToTop()"
+          class="text-white font-medium hover:underline">
+          Crear cuenta
+        </a>
+      </div>
+
+      <!-- Separador -->
+      <div class="flex items-center justify-center my-3">
+        <hr class="w-32 border-white">
+        <span class="mx-4 font-bold text-green-500">o</span>
+        <hr class="w-32 border-white">
+      </div>
+
+      <!-- BOTÓN GOOGLE -->
+      <button
+        type="button"
+        class="w-full flex items-center justify-center gap-3 bg-white shadow-md text-gray-700 font-semibold py-3 rounded-full hover:bg-gray-50 transition">
+
+        <!-- Ícono Google -->
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/2048px-Google_%22G%22_logo.svg.png"
+          alt="Google"
+          class="w-6 h-6" />
+
+        INICIAR SESIÓN CON GOOGLE
+      </button>
+
+    </form>
+  </div>
+
+  <!-- DERECHA — IMAGEN -->
+  <div
+    class="hidden md:block bg-cover bg-center"
+    style="background-image: url('https://plus.unsplash.com/premium_photo-1726783564564-280eb0741ea3?q=80&w=862&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+  </div>
+
+</main>

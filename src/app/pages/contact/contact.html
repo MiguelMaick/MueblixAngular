@@ -1,0 +1,88 @@
+<main class="flex flex-col items-center justify-center w-full min-h-screen bg-black/90 relative z-10 p-6">
+
+  <!-- CONTENEDOR PRINCIPAL DE FORMULARIO + MAPA -->
+  <section class="max-w-6xl w-full flex flex-col md:flex-row gap-6 mt-10">
+    
+    <!-- MAPA IZQUIERDA -->
+    <div class="bg-white/5 rounded-xl p-6 md:p-8 text-white w-full md:w-1/2">
+      <h3 class="text-3xl md:text-4xl font-bold mb-4 flex items-center">
+        <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
+        Contáctanos
+      </h3>
+      <p class="mb-6 text-lg text-white">
+        <span class="font-bold">Teléfono:</span> (123) 456-7890<br>
+        <span class="font-bold">Dirección:</span> Loma, Tangancícuaro Ote. 172, Loma Dorada Delegación D, 45402 Guadalajara, Jal.
+      </p>
+
+      <div class="w-full h-64 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14936.406271566417!2d-103.2557854304856!3d20.62471644926791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b5c7ae3a172f%3A0xfbb3b15de8972a95!2sCreaciones%20Marlet!5e0!3m2!1ses-419!2smx!4v1763055348715!5m2!1ses-419!2smx"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- FORMULARIO DERECHA -->
+    <div class="bg-white/5 rounded-xl p-6 w-full md:w-1/2  items-center justify-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 flex items-center text-white">
+        <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
+        ¿Todo bien? ¿Todo correcto?</h2>
+      <p class="mb-6 text-lg text-white text-center">
+        ¡Si tienes alguna pregunta o necesitas más información, estamos aquí para ayudarte! Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.
+      </p>
+      <form class="space-y-6 w-full">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300">Nombre</label>
+          <input type="text" id="name" name="name" required
+                 class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-green-500 focus:border-green-500">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required
+                 class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-green-500 focus:border-green-500">
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-300">Mensaje</label>
+          <textarea id="message" name="message" rows="4" required
+                    class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-green-500 focus:border-green-500"></textarea>
+        </div>
+        <div>
+          <button type="submit"
+                  class="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition">
+            Enviar Mensaje
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- REDES SOCIALES ABAJO -->
+  <div class="bg-white/5 rounded-xl p-6 mt-10 w-full max-w-6xl flex flex-col items-center">
+    <h3 class="text-3xl md:text-4xl font-bold mb-4 flex items-center text-white">
+      <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
+      Síguenos en redes sociales
+    </h3>
+
+    <p class="mb-6 text-lg text-white text-center">
+      Mantente al día con nuestras últimas colecciones, ofertas exclusivas y consejos de decoración.
+    </p>
+
+    <div class="flex gap-6 justify-center">
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+        <i class="fa-brands fa-facebook fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-green-400 transition">
+        <i class="fa-brands fa-twitter fa-2x"></i>
+      </a>
+    </div>
+  </div>
+
+</main>
