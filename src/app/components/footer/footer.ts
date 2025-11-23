@@ -1,18 +1,17 @@
-// footer.component.ts
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './footer.html',
-  styleUrls: ['./footer.css']
+  styles: []
 })
 export class FooterComponent {
-  currentYear: number = new Date().getFullYear();
+  
   scrollToTop(): void {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

@@ -1,137 +1,153 @@
-<main class=" bg-black/90 text-white overflow-hidden">
+<main class="bg-neutral-950 text-white overflow-hidden selection:bg-green-500 selection:text-black">
 
-<!-- Sección principal con fondo desenfocado -->
-  <section class="relative min-h-screen flex items-center justify-center">
-    <!-- Fondo con desenfoque -->
-    <img 
-    src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-    alt="Muebles de oficina" 
-    class="absolute inset-0 w-full h-full object-cover filter blur-sm brightness-50"
-    />
+      <!-- 1. HERO: Estilo Editorial Pantalla Completa -->
+      <section class="relative h-screen w-full flex items-end pb-20 md:pb-32 px-6 md:px-20">
+        <!-- Imagen de fondo con parallax suave -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img 
+            src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=870&auto=format&fit=crop" 
+            alt="Luxury Furniture" 
+            class="w-full h-full object-cover opacity-60 filter brightness-75 scale-110 animate-pulse-slow"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        </div>
 
-    <!-- Contenido -->
-    <div class="relative z-10 mx-auto max-w-2xl p-10 text-center">
-      <h1 class="text-5xl font-bold tracking-tight text-white sm:text-7xl">
-        Compras rápidas y sin problemas
-      </h1>
-      <p class="mt-8 text-lg font-medium text-gray-300 sm:text-xl">
-        Encuentra piezas únicas diseñadas para reflejar tu estilo, con materiales sostenibles y acabados de lujo.
-      </p>
-      <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a 
-          href="/products"
-          class="rounded-md bg-green-600 px-5 py-3 text-base font-semibold text-white shadow-lg hover:bg-green-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 transition">
-          Ver catálogo
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- Contenido alineado abajo-izquierda -->
+        <div #animateItem class="opacity-0 translate-y-12 transition-all duration-1000 ease-out relative z-10 max-w-3xl">
+            <span class="text-green-400 tracking-[0.3em] uppercase text-sm font-bold mb-4 block">Nueva Colección 2025</span>
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
+            Diseño que <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-green-500">define espacios.</span>
+            </h1>
+            <div class="flex flex-col md:flex-row gap-8 items-start md:items-center">
+                <a href="/products" class="group bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-500 transition-all duration-300 flex items-center gap-2">
+                    Explorar Catálogo
+                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <p class="text-gray-400 max-w-md text-sm md:text-base leading-relaxed border-l border-white/20 pl-6">
+                    Encuentra piezas únicas diseñadas para reflejar tu estilo, con materiales sostenibles y acabados de lujo.
+                </p>
+            </div>
+        </div>
+      </section>
 
+      <!-- 2. SECCIÓN OFICINA: Diseño Superpuesto (Imagen Grande + Caja Flotante) -->
+      <section class="relative py-32 px-6 md:px-12 max-w-[1800px] mx-auto">
+        <div class="flex flex-col md:flex-row items-center">
+            
+            <!-- Imagen que ocupa 70% del ancho -->
+            <div #animateItem class="opacity-0 scale-95 transition-all duration-1000 ease-out w-full md:w-[70%] h-[600px] relative z-0 rounded-3xl overflow-hidden">
+                <img 
+                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80" 
+                alt="Oficina Moderna" 
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute inset-0 bg-black/10"></div>
+            </div>
 
-<!-- Sección de Muebles para oficinas -->
-  <section class="flex flex-col md:flex-row w-full min-h-screen relative z-10">
-    <!-- Imagen izquierda -->
-    <div class="w-full md:w-1/2 h-64 md:h-auto">
-      <img 
-        src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" 
-        alt="Muebles de oficina" 
-        class="w-full h-full object-cover"
-      />
-    </div>
+            <!-- Caja de texto que se superpone (margin negativo) -->
+            <div #animateItem class="opacity-0 -translate-x-12 transition-all duration-1000 ease-out w-full md:w-[40%] bg-neutral-900/90 backdrop-blur-xl p-10 md:p-16 rounded-3xl border border-white/5 shadow-2xl shadow-black/50 z-10 mt-[-100px] md:mt-0 md:-ml-[150px]">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    Espacios de <br/><span class="text-green-500">Alto Rendimiento</span>
+                </h2>
+                <p class="text-gray-400 mb-8 leading-relaxed">
+                    Elige piezas clásicas o modernas que transformen tu espacio de trabajo. La ergonomía se encuentra con el diseño italiano.
+                </p>
+                <a href="/products" class="text-white border-b border-green-500 pb-1 hover:text-green-400 transition-colors uppercase tracking-widest text-xs font-bold">
+                    Ver Catalogo
+                </a>
+            </div>
+        </div>
+      </section>
 
-    <!-- Texto derecha -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center items-start p-10 bg-gradient-to-r from-green-900/30 via-transparent text-white">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-        <span class="inline-block w-2 h-8 bg-white rounded"></span>
-        Muebles para oficinas
-      </h2>
-      <p class="text-lg mb-8 text-white leading-relaxed">
-        Elige piezas clásicas o modernas que transformen tu espacio de trabajo 
-        y lo hagan más cómodo y funcional.
-      </p>
-      <a
-        href="/products" 
-        class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md shadow-md transition-all duration-300">
-        COMPRA AHORA
-      </a>
-    </div>
-  </section>
+      <!-- 3. SECCIÓN HOGAR: Diseño Inverso Superpuesto -->
+      <section class="relative py-10 px-6 md:px-12 max-w-[1800px] mx-auto">
+        <div class="flex flex-col md:flex-row-reverse items-center">
+            
+            <!-- Imagen derecha -->
+            <div #animateItem class="opacity-0 scale-95 transition-all duration-1000 ease-out w-full md:w-[70%] h-[600px] relative z-0 rounded-3xl overflow-hidden">
+                <img 
+                src="https://plus.unsplash.com/premium_photo-1678752717095-08cd0bd1d7e7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Hogar Confortable" 
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div class="absolute inset-0 bg-black/10"></div>
+            </div>
 
-<!-- Muebles para el hogar -->
-<section class="flex flex-col md:flex-row w-full min-h-screen relative z-10">
-  
-  <!-- Texto derecha -->
-  <div class="w-full md:w-1/2 flex flex-col justify-center items-end text-right p-10 bg-gradient-to-l from-green-900/30 via-transparent text-white">
-    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
-    Muebles para el hogar <span class="inline-block w-2 h-8 bg-white rounded"></span>
-    </h2>
-    <p class="text-lg mb-8 text-white leading-relaxed max-w-md">
-      Haz que tu casa luzca elegante y acogedora con nuestros muebles diseñados para el día a día.
-    </p>
-      <a
-        href="/products" 
-        class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md shadow-md transition-all duration-300">
-        COMPRA AHORA
-      </a>
-  </div>
+            <!-- Texto izquierda superpuesto -->
+            <div #animateItem class="opacity-0 translate-x-12 transition-all duration-1000 ease-out w-full md:w-[40%] bg-white text-black p-10 md:p-16 rounded-3xl shadow-2xl z-10 mt-[-100px] md:mt-0 md:-mr-[150px]">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    Calidez & <br/><span class="text-green-600">Sofisticación</span>
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed font-medium">
+                    Haz que tu casa luzca elegante y acogedora. Desde sofás minimalistas hasta mesas de centro que roban miradas.
+                </p>
+                <a href="/products" class="text-black border-b border-green-600 pb-1 hover:text-green-600 transition-colors uppercase tracking-widest text-xs font-bold">
+                    Ver Catalogo
+                </a>
+            </div>
+        </div>
+      </section>
 
-  <!-- Imagen derecha -->
-  <div class="w-full md:w-1/2 h-64 md:h-auto">
-    <img 
-      src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" 
-      alt="Muebles de oficina" 
-      class="w-full h-full object-cover"
-    />
-  </div>
+      <!-- 4. SECCIÓN PROMESA: Grid de Tarjetas (Bento Grid Style) -->
+      <section class="py-32 px-6 md:px-20 max-w-[1600px] mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div #animateItem class="opacity-0 translate-y-8 transition-all duration-700">
+                <span class="text-green-500 font-bold tracking-widest text-sm uppercase mb-2 block">¿Por qué Mueblix?</span>
+                <h2 class="text-4xl md:text-6xl font-bold">La experiencia <br/>Definitiva.</h2>
+            </div>
+            <div #animateItem class="opacity-0 translate-y-8 transition-all duration-700 delay-100">
+                <a href="/products" class="inline-block bg-white/10 hover:bg-white/20 px-8 py-3 rounded-full backdrop-blur-md transition-all border border-white/10">
+                    Comenzar a comprar
+                </a>
+            </div>
+        </div>
 
-</section>
+        <!-- Grid 4 columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Card 1 -->
+            <div #animateItem class="opacity-0 translate-y-12 transition-all duration-700 ease-out delay-100 bg-neutral-900 p-8 rounded-2xl border border-white/5 hover:border-green-500/30 group">
+                <div class="text-4xl mb-6 bg-green-900/20 w-16 h-16 flex items-center justify-center rounded-full group-hover:bg-green-500 group-hover:text-black transition-colors">🕛</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Entrega Flash</h3>
+                <p class="text-gray-400 leading-relaxed">Pide antes de las 2 p.m. y recibe tus muebles hoy mismo.</p>
+            </div>
 
-<!-- Sección de ¿Por qué a la gente le encanta comprar en Mueblix? -->
-  <section class="flex flex-col md:flex-row w-full min-h-screen relative z-10">
-    <!-- Imagen izquierda -->
-    <div class="w-full md:w-1/2 h-64 md:h-auto">
-      <img 
-        src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" 
-        alt="Muebles de oficina" 
-        class="w-full h-full object-cover"
-      />
-    </div>
+            <!-- Card 2 -->
+            <div #animateItem class="opacity-0 translate-y-12 transition-all duration-700 ease-out delay-200 bg-neutral-900 p-8 rounded-2xl border border-white/5 hover:border-green-500/30 group">
+                <div class="text-4xl mb-6 bg-green-900/20 w-16 h-16 flex items-center justify-center rounded-full group-hover:bg-green-500 group-hover:text-black transition-colors">🔄</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Devolución Fácil</h3>
+                <p class="text-gray-400 leading-relaxed">¿No te convence? Tienes 30 días para devolverlo sin preguntas.</p>
+            </div>
 
-    <!-- Texto derecha -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center items-start p-10 bg-gradient-to-r from-green-900/30 via-transparent text-white">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-        <span class="inline-block w-2 h-8 bg-white rounded"></span>
-        ¿Por qué a la gente le encanta comprar en Mueblix?
-      </h2>
-      <ul>
-        <li class="mb-2"> 🕛Haz tu pedido antes de las 2 p. m. y recíbelo el mismo día.</li>
-        <li class="mb-2"> 🔄 ¿No era lo que esperabas? Aprovecha nuestra política de devoluciones sin complicaciones.</li>
-        <li class="mb-2"> 📞Atención al cliente 24/7 para ayudarte en todo momento.</li>
-        <li class="mb-2"> 💳Aceptamos pagos sin contacto y también en efectivo.</li>
-      </ul>
+            <!-- Card 3 -->
+            <div #animateItem class="opacity-0 translate-y-12 transition-all duration-700 ease-out delay-300 bg-neutral-900 p-8 rounded-2xl border border-white/5 hover:border-green-500/30 group">
+                <div class="text-4xl mb-6 bg-green-900/20 w-16 h-16 flex items-center justify-center rounded-full group-hover:bg-green-500 group-hover:text-black transition-colors">📞</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Soporte 24/7</h3>
+                <p class="text-gray-400 leading-relaxed">Expertos en diseño disponibles a cualquier hora para ayudarte.</p>
+            </div>
 
-      <a
-        href="/products" 
-        class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md shadow-md transition-all duration-300">
-        COMPRA AHORA
-      </a>
-    </div>
-  </section>
+            <!-- Card 4 -->
+            <div #animateItem class="opacity-0 translate-y-12 transition-all duration-700 ease-out delay-400 bg-neutral-900 p-8 rounded-2xl border border-white/5 hover:border-green-500/30 group">
+                <div class="text-4xl mb-6 bg-green-900/20 w-16 h-16 flex items-center justify-center rounded-full group-hover:bg-green-500 group-hover:text-black transition-colors">💳</div>
+                <h3 class="text-xl font-bold mb-3 text-white">Pagos Flexibles</h3>
+                <p class="text-gray-400  leading-relaxed">Aceptamos todas las tarjetas, efectivo y pagos sin contacto.</p>
+            </div>
+        </div>
+      </section>
 
-  <section class=" bg-white/5">
-    <div class="mx-auto max-w-2xl flex flex-col items-center p-10 text-center">
-  <h3 class="text-3xl md:text-4xl font-bold mb-4 flex items-center text-white">
-    <span class="inline-block w-2 h-8 bg-green-500 rounded mr-3"></span>
-    ¿Alguna duda?
-  </h3>
+      <!-- 5. FOOTER CTA: Minimalista -->
+      <section class="border-t border-white/10 bg-neutral-950">
+        <div class="max-w-4xl mx-auto py-24 px-6 text-center">
+            <h3 #animateItem class="opacity-0 translate-y-8 transition-all duration-1000 text-3xl md:text-5xl font-bold mb-8">
+                ¿Listo para transformar <br/> tu espacio?
+            </h3>
+            <div #animateItem class="opacity-0 translate-y-8 transition-all duration-1000 delay-100 flex justify-center gap-4">
+                <a [routerLink]="['/contact']" (click)="scrollToTop()" class="bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-200 transition-colors cursor-pointer">
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+      </section>
 
-  <p class="mb-6 text-lg text-white text-center">
-    Contactate con nuestro equipo de soporte para cualquier consulta o asistencia que necesites.
-  </p>
-  <a [routerLink]="['/contact']" (click)="scrollToTop()" class="border border-green-600 text-green-400 px-5 py-2 rounded-md hover:bg-green-900/20 transition">
-  Contáctanos
-  </a>
-</div>
-
-  </section>
-</main>
+    </main>
