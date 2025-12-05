@@ -1,0 +1,71 @@
+<div 
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+  (click)="cerrarModal()"
+>
+  <div 
+    class="bg-neutral-900 text-white p-8 rounded-3xl shadow-2xl w-full max-w-4xl relative 
+           border border-white/10 backdrop-blur-xl transform transition-all"
+    (click)="$event.stopPropagation()"
+  >
+
+    <!-- BOTÓN CERRAR -->
+    <button 
+      (click)="cerrarModal()" 
+      class="absolute top-4 right-4 text-white hover:text-red-500 
+             transition-colors text-2xl"
+    >
+      ✖
+    </button>
+
+    <!-- IMAGEN PRODUCTO -->
+    <div class="w-full h-72 flex items-center justify-center mb-6">
+      <img 
+        [src]="'http://localhost:3000/img/producto/' + producto?.imagen"
+        alt="{{ producto?.nombre }}" 
+        class="w-full h-full object-contain rounded-2xl shadow-lg"
+      />
+    </div>
+
+    <!-- NOMBRE -->
+    <h2 class="text-3xl font-bold mb-3 tracking-wide text-center">
+      {{ producto?.nombre }}
+    </h2>
+
+    <!-- PRECIO -->
+    <p class="text-2xl font-semibold text-green-400 mb-4 text-center">
+      ${{ producto?.precio }}
+    </p>
+
+    <!-- DESCRIPCIÓN + COLOR + PESO -->
+    <p class="text-base leading-relaxed mb-6">
+
+      <!-- Descripción -->
+      {{ producto?.caracteristicas?.descripcion || 'Sin descripción disponible.' }}
+      <br><br>
+
+      <!-- Color -->
+      <strong class="text-green-400">Color: </strong>
+      <span class="inline-flex items-center gap-2">
+        {{ producto?.caracteristicas?.color || 'Sin color.' }}
+
+        <!-- Círculo color luego se implementa xd -->
+
+      </span>
+
+      <br><br>
+
+      <!-- Peso -->
+      <strong class="text-green-400">Peso:</strong> 
+      {{ producto?.caracteristicas?.peso || 'Sin peso.' }}
+    </p>
+
+    <!-- BOTÓN AGREGAR AL CARRITO -->
+    <button
+      class="w-full py-4 mt-2 bg-green-500 hover:bg-green-600 text-white 
+             rounded-2xl font-semibold shadow-md transition-all active:scale-95"
+    >
+      Agregar al carrito
+    </button>
+
+  </div>
+</div>

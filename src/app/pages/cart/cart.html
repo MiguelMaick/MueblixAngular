@@ -1,0 +1,52 @@
+<div class="min-h-screen bg-neutral-900 text-white p-6">
+
+  <h1 class="text-4xl font-bold mb-6 animate-fade-in">🛒 Carrito de Compras</h1>
+
+  <!-- Carrito vacío -->
+  <div *ngIf="cart.length === 0" class="text-center text-gray-400 text-xl mt-20 animate-fade-in">
+    <p>Tu carrito está vacío</p>
+  </div>
+
+  <!-- Si hay productos -->
+  <div *ngIf="cart.length > 0" class="space-y-4">
+
+    <div 
+      *ngFor="let product of cart"
+      class="flex items-center bg-neutral-800 p-4 rounded-xl shadow-lg animate-slide-up"
+    >
+
+      <img 
+        [src]="product.imagen[0]" 
+        alt="{{ product.nombre }}" 
+        class="w-24 h-24 object-cover rounded-lg mr-4"
+      />
+
+      <div class="flex-1">
+        <h2 class="text-xl font-semibold">{{ product.nombre }}</h2>
+        <p class="text-green-400 font-bold text-lg">$ {{ product.precio }}</p>
+        <p class="text-gray-400 text-sm">Cantidad: {{ product.cantidad }}</p>
+      </div>
+
+      <button 
+        (click)="removeFromCart(product._id)"
+        class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition-all"
+      >
+        X
+      </button>
+
+    </div>
+
+    <!-- Total -->
+    <div class="mt-6 bg-neutral-800 p-4 rounded-xl text-right text-xl animate-fade-in">
+      <p>Total: <span class="text-green-400 font-bold">$ {{ total }}</span></p>
+    </div>
+
+    <!-- PayPal -->
+    <div class="mt-8 animate-fade-in">
+      <h3 class="text-xl mb-3 font-semibold">Pagar con PayPal</h3>
+      <div id="paypal-button-container"></div>
+    </div>
+
+  </div>
+
+</div>

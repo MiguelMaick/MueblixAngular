@@ -1,0 +1,56 @@
+<main class="bg-neutral-950 text-white min-h-screen selection:bg-green-500 selection:text-black pb-24 flex justify-center items-start">
+
+  <div class="max-w-3xl w-full mt-24 p-10 bg-gray-900 rounded-3xl shadow-2xl shadow-black/50 transform transition-all duration-500 ease-in-out scale-95 opacity-0 animate-fadeIn">
+
+    <h1 class="text-4xl font-extrabold mb-10 text-center text-green-500 animate-pulse tracking-wider">Mi Perfil</h1>
+
+    <div *ngIf="loading" class="text-center py-6 animate-pulse text-gray-400 text-lg">Cargando...</div>
+    <div *ngIf="errorMessage" class="text-red-500 text-center mb-6 animate-shake font-semibold">{{ errorMessage }}</div>
+
+    <form [formGroup]="profileForm" *ngIf="!loading && !errorMessage" class="space-y-6">
+
+      <div class="relative">
+        <label class="block mb-2 font-semibold text-gray-300 transition-all duration-300">Nombres</label>
+        <input formControlName="nombres" type="text"
+               class="w-full p-4 rounded-2xl bg-gray-800 border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300 shadow-sm shadow-black/20" />
+      </div>
+
+      <div class="relative">
+        <label class="block mb-2 font-semibold text-gray-300 transition-all duration-300">Apellidos</label>
+        <input formControlName="apellidos" type="text"
+               class="w-full p-4 rounded-2xl bg-gray-800 border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300 shadow-sm shadow-black/20" />
+      </div>
+
+      <div class="relative">
+        <label class="block mb-2 font-semibold text-gray-300 transition-all duration-300">Correo</label>
+        <input formControlName="email" type="email" readonly
+               class="w-full p-4 rounded-2xl bg-gray-800 border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300 cursor-not-allowed text-gray-400" />
+      </div>
+
+      <div class="relative">
+        <label class="block mb-2 font-semibold text-gray-300 transition-all duration-300">Teléfono</label>
+        <input formControlName="telefono" type="text"
+               class="w-full p-4 rounded-2xl bg-gray-800 border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-300 shadow-sm shadow-black/20" />
+      </div>
+
+      <div class="flex justify-between items-center mt-10">
+
+        <button type="submit"
+                class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-500 text-white px-8 py-3 rounded-full font-bold transition transform hover:scale-105 hover:shadow-lg shadow-green-900/50">
+          Guardar
+        </button>
+
+        <button type="button" (click)="goHome()"
+                class="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-full font-bold transition transform hover:scale-105 hover:shadow-lg shadow-black/30">
+          Volver
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</main>
+
+

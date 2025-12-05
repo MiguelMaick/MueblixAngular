@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login'; 
-import { RegisterComponent } from './register/register';
+import { Register } from './register/register';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: Register },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

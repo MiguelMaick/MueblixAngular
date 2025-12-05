@@ -1,0 +1,86 @@
+<main class="bg-neutral-950 text-white min-h-screen selection:bg-green-500 selection:text-black pb-32 pt-28">
+
+  <div class="p-8 max-w-4xl mx-auto">
+
+    <!-- Título -->
+    <h2 
+      class="text-4xl font-extrabold mb-10 text-center text-green-400 
+             drop-shadow-[0_0_15px_rgba(0,255,0,0.45)] animate-fade-in tracking-wide"
+    >
+      Mis Pedidos
+    </h2>
+
+    <!-- Loading -->
+    <div *ngIf="loading"
+        class="text-center py-16 text-gray-400 text-xl animate-pulse">
+      Cargando pedidos...
+    </div>
+
+    <!-- No hay pedidos -->
+    <div *ngIf="!loading && pedidos.length === 0"
+        class="text-center py-16 text-gray-500 text-xl animate-fade-in">
+      No tienes pedidos aún.
+    </div>
+
+    <!-- Lista de pedidos -->
+    <div class="space-y-8" *ngIf="!loading && pedidos.length > 0">
+
+      <div 
+        *ngFor="let p of pedidos; let i = index; trackBy: trackByPedido"
+        class="bg-neutral-900/90 border border-neutral-700 rounded-3xl p-7 text-white shadow-xl 
+               backdrop-blur-md hover:border-green-500/40 hover:shadow-green-500/20 
+               transition-all duration-300 animate-slide-up opacity-0"
+        [style.animation-delay]="i * 0.12 + 's'"
+      >
+
+        <!-- Encabezado del pedido -->
+        <div class="flex flex-wrap justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-green-400">
+            Pedido #{{ p._id }}
+          </h3>
+
+          <span class="text-green-300 font-extrabold text-xl drop-shadow">
+            ${{ p.total }}
+          </span>
+        </div>
+
+        <!-- Fecha -->
+        <p class="text-gray-400 text-sm mb-4">
+          Fecha del pedido:
+          <span class="text-gray-200 font-medium">
+            {{ p.createdAt | date:'medium' }}
+          </span>
+        </p>
+
+        <!-- Productos -->
+        <h4 class="font-semibold mb-2 text-lg text-green-300">Productos</h4>
+
+        <div class="space-y-3">
+          <div 
+            *ngFor="let prod of p.producto || []"
+            class="ml-4 border-l border-green-500/40 pl-4 py-2 bg-neutral-800/40 rounded-lg
+                   hover:bg-neutral-800 transition-all duration-200"
+          >
+            <p class="text-lg font-semibold">
+              {{ prod?.nombre || 'Producto sin nombre' }}
+            </p>
+
+            <p class="text-gray-400 text-sm">
+              Precio: <span class="text-gray-200">${{ prod?.precio || 0 }}</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Cantidad total -->
+        <div class="mt-6 text-gray-300 text-sm">
+          <strong class="text-green-400">Cantidad total:</strong>
+          {{ p.cantidad }}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>

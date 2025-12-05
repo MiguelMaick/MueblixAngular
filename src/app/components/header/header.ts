@@ -1,61 +1,62 @@
-// src/app/components/header/header.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterLink, RouterLinkActive } from '@angular/router'; 
-
-// Asegúrate de que la ruta sea correcta según tu estructura
-import { CartMenu } from '../cart-menu/cart-menu'; 
+import { RouterModule, Router } from '@angular/router';
+import { AuthStateService } from '../../Services/auth-state';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule, 
-    // RouterLink y RouterLinkActive ya vienen en RouterModule, pero dejarlos no afecta
-    RouterLink, 
-    RouterLinkActive,
-    CartMenu
-  ], 
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.html',
-  styleUrl: './header.css'
+  styleUrls: ['./header.css']
 })
-export class HeaderComponent {
-  
-  // 1. ESTADO DEL CARRITO
-  isCartOpen: boolean = false; 
+export class HeaderComponent implements OnInit {
 
-  // 2. NUEVO: ESTADO DEL MENÚ MÓVIL (Necesario para el nuevo diseño)
-  isMobileMenuOpen: boolean = false;
+  userName = '';
+  token = '';
+  isMobileMenuOpen = false;
+  dropdownOpen = false;
+
+  constructor(
+    private authState: AuthStateService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    // 🔥 Cuando el usuario cambia → el header se actualiza SOLO
+    this.authState.userData$.subscribe(user => {
+      if (user) {
+        this.userName = user.nombres;
+        this.token = localStorage.getItem('token') || '';
+      } else {
+        this.userName = '';
+        this.token = '';
+      }
+    });
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  closeDropdown() {
+    this.dropdownOpen = false;
+  }
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
+
+  logout() {
+    this.authState.logout();  // 🔥 Actualiza al instante
+    this.closeMobileMenu();
+    this.router.navigate(['/auth/login']);
+  }
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Lógica del Carrito (Mantenemos tu lógica de bloquear el scroll)
-  toggleCart(): void {
-    this.isCartOpen = !this.isCartOpen;
-    
-    // Si abrimos el carrito, cerramos el menú móvil por si acaso
-    if (this.isCartOpen) {
-      this.isMobileMenuOpen = false; 
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }
-
-  // 3. NUEVAS FUNCIONES PARA EL MENÚ MÓVIL
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    // Opcional: Bloquear scroll también al abrir menú móvil
-    if (this.isMobileMenuOpen) {
-        // Cerramos el carrito si se abre el menú
-        this.isCartOpen = false;
-    }
-  }
-  
-  closeMobileMenu(): void {
-    this.isMobileMenuOpen = false;
   }
 }
